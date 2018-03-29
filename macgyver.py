@@ -16,9 +16,9 @@ class Macgyver:
         self.square_x = 0
         self.square_y = 0
         self.x = 0
-        self.y = 30
+        self.y = 0
         # Axe by default
-        self.axe = self.right
+        self.axe = self.down
         # Level in which the character is located
         self.level = level
 
