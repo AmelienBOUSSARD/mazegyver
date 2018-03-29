@@ -5,19 +5,19 @@ class Macgyver:
     """Class for create the character Macgyver"""
 
     def __init__(self, right, left, up, down, level):
-                # Sprites du personnage
+                # Sprites of character
         self.right = pygame.image.load(right).convert_alpha()
         self.left = pygame.image.load(left).convert_alpha()
         self.up = pygame.image.load(up).convert_alpha()
         self.down = pygame.image.load(down).convert_alpha()
-        # Position du personnage en squares et en pixels
+        # Position of the character in squares and pixels
         self.square_x = 0
         self.square_y = 0
         self.x = 0
         self.y = 0
-        # Direction par défaut
+        # Axe by default
         self.axe = self.right
-        # Niveau dans lequel le personnage se trouve
+        # Level in which the character is located
         self.level = level
 
 
