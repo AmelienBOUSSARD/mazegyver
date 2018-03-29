@@ -47,4 +47,5 @@ while game:
     if event.type == QUIT or event.type == KEYDOWN and event.key == K_ESCAPE:
         game = False
     if level.setting[mg.square_y][mg.square_x] == 'G':
+        print("You WIN!!!")
         game = False

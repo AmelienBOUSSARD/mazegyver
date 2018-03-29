@@ -29,25 +29,25 @@ class Macgyver:
                 if self.level.setting[self.square_y][self.square_x + 1] != '#':
                     self.square_x += 1
                     self.x = self.square_x * sprite_size
-                self.axe = self.right
+            self.axe = self.right
 
         if axe == 'left':
-            if self.square_x < (nbr_sprite_square - 1):
-                if self.level.setting[self.square_y][self.square_x + 1] != '#':
-                    self.square_x += 1
+            if self.square_x > 0:
+                if self.level.setting[self.square_y][self.square_x - 1] != '#':
+                    self.square_x -= 1
                     self.x = self.square_x * sprite_size
-                self.axe = self.left
+            self.axe = self.left
 
         if axe == 'up':
-            if self.square_x < (nbr_sprite_square - 1):
-                if self.level.setting[self.square_y][self.square_x + 1] != '#':
-                    self.square_x += 1
-                    self.x = self.square_x * sprite_size
-                self.axe = self.up
+            if self.square_y > 0:
+                if self.level.setting[self.square_y - 1][self.square_x] != '#':
+                    self.square_y -= 1
+                    self.y = self.square_y * sprite_size
+            self.axe = self.up
 
         if axe == 'down':
-            if self.square_x < (nbr_sprite_square - 1):
-                if self.level.setting[self.square_y][self.square_x + 1] != '#':
-                    self.square_x += 1
-                    self.x = self.square_x * sprite_size
-                self.axe = self.down
+            if self.square_y < (nbr_sprite_square - 1):
+                if self.level.setting[self.square_y + 1][self.square_x] != '#':
+                    self.square_y += 1
+                    self.y = self.square_y * sprite_size
+            self.axe = self.down

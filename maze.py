@@ -26,7 +26,6 @@ class Maze:
     # Function for display the game
     def display(self, window):
         wall = pygame.image.load(img_wall).convert_alpha()
-        start = pygame.image.load(img_start).convert_alpha()
         guardian = pygame.image.load(img_guardian).convert_alpha()
 
         nbr_line = 0
@@ -37,8 +36,6 @@ class Maze:
                 y = nbr_line * sprite_size
                 if sprite == '#':
                     window.blit(wall, (x, y))
-                elif sprite == 'M':
-                    window.blit(start, (x, y))
                 elif sprite == 'G':
                     window.blit(guardian, (x, y))
                 nbr_square += 1
