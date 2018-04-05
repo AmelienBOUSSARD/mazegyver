@@ -1,22 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: Utf-8 -*
 
-import pygame
-from pygame.locals import *
-from constant import *
-from maze import *
-from macgyver import *
-
-
-pygame.init()
-
-# VAR
-window = pygame.display.set_mode((450, 450))
-ico = pygame.image.load(img_ico)
-level = Maze(maze)
-background = pygame.image.load(img_background).convert()
-mg = Macgyver("images/macgyver_right.png", "images/macgyver_left.png",
-              "images/macgyver_up.png", "images/macgyver_down.png", level)
+from game import *
 
 while game:
 
