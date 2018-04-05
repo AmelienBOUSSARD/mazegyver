@@ -1,12 +1,14 @@
 import pygame
 from pygame.locals import *
 from constant import *
+# import constant as const
 
 
 class Macgyver:
     """Class for create the character Macgyver"""
 
     def __init__(self, right, left, up, down, level):
+        """Constructor of the class"""
         # Sprites of character
         self.right = pygame.image.load(right).convert_alpha()
         self.left = pygame.image.load(left).convert_alpha()

@@ -2,15 +2,15 @@ from constant import *
 from macgyver import *
 
 
-class Maze:
+class _Maze:
     """Class for create the Maze"""
 
     def __init__(self, file):
         self.file = file
         self.setting = 0
 
-    # Generate the maze
     def generate(self):
+        """Generate the maze"""
         with open(self.file, "r") as file:
             level_setting = []
             for line in file:
@@ -23,8 +23,8 @@ class Maze:
 
             self.setting = level_setting
 
-    # Function for display the game
     def display(self, window):
+        """Function for display the game"""
         wall = pygame.image.load(img_wall).convert_alpha()
         guardian = pygame.image.load(img_guardian).convert_alpha()
 
