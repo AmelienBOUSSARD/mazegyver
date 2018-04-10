@@ -1,24 +1,30 @@
-import pygame
 import random
+import pygame
 from pygame.locals import *
-from constant import *
+from constant import IMG_ICO, TITLE_WINDOW, IMG_BACKGROUND, C_TUBE, C_NEEDLE, C_ETHER, MAZE, game
 from maze import _Maze
-from macgyver import *
+# from loot import Loot
+from macgyver import Macgyver
 
 
 pygame.init()
 
 # VAR
-window = pygame.display.set_mode((450, 450))
-ico = pygame.image.load(img_ico)
-level = _Maze(maze)
-background = pygame.image.load(img_background).convert()
-mg = Macgyver("images/macgyver_right.png", "images/macgyver_left.png",
-              "images/macgyver_up.png", "images/macgyver_down.png", level)
+WINDOW = pygame.display.set_mode((450, 450))
+ICO = pygame.image.load(IMG_ICO)
+LEVEL = _Maze(MAZE)
+BACKGROUND = pygame.image.load(IMG_BACKGROUND).convert()
+MG = Macgyver("images/macgyver_right.png", "images/macgyver_left.png",
+              "images/macgyver_up.png", "images/macgyver_down.png", LEVEL)
+# Load loot
+TUBE_IMG = pygame.image.load(C_TUBE).convert_alpha()
+NEEDLE_IMG = pygame.image.load(C_NEEDLE).convert_alpha()
+ETHER_IMG = pygame.image.load(C_ETHER).convert_alpha()
 
-# if __name__ == "__main__":
-# instance start et game
-# call start for start the game
-
-
-# tant que
+# Sprite of loot
+TUBE = Loot(TUBE_IMG, LEVEL)
+TUBE.display(TUBE_IMG, WINDOW)
+NEEDLE = Loot(NEEDLE_IMG, LEVEL)
+NEEDLE.display(NEEDLE_IMG, WINDOW)
+ETHER = Loot(ETHER_IMG, LEVEL)
+ETHER.display(ETHER_IMG, WINDOW)

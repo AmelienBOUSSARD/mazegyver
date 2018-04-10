@@ -1,16 +1,19 @@
 # Constant
-nbr_sprite_square = 15
-sprite_size = 30
-nbr_square = nbr_sprite_square * sprite_size
-maze = 'maze.txt'
+NBR_SPRITE_SQUARE = 15
+SPRITE_SIZE = 30
+nbr_square = NBR_SPRITE_SQUARE * SPRITE_SIZE
+MAZE = 'maze.txt'
 # Customize the window
-title_window = "MAZE"
-img_ico = "images/brick.png"
+TITLE_WINDOW = "MAZEGYVER"
+IMG_ICO = "images/brick.png"
 # Sprite of maze
-img_wall = "images/brick.png"
-img_start = "images/ether.png"
-img_guardian = "images/guardian.png"
-img_background = "images/background.jpg"
+IMG_WALL = "images/brick.png"
+IMG_GUARDIAN = "images/guardian.png"
+IMG_BACKGROUND = "images/background.jpg"
 
+# loot
+C_TUBE = "images/tube.png"
+C_NEEDLE = "images/needle.png"
+C_ETHER = "images/ether.png"
 # Var
 game = True

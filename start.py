@@ -6,31 +6,31 @@ from game import *
 while game:
 
     pygame.time.Clock().tick(30)
-    pygame.display.set_icon(ico)
-    pygame.display.set_caption(title_window)
+    pygame.display.set_icon(ICO)
+    pygame.display.set_caption(TITLE_WINDOW)
 
     # For leave the program
 
     for event in pygame.event.get():
         if event.type == KEYDOWN:
             if event.key == K_RIGHT:
-                mg.move('right')
+                MG.move('right')
             elif event.key == K_LEFT:
-                mg.move('left')
+                MG.move('left')
             elif event.key == K_UP:
-                mg.move('up')
+                MG.move('up')
             elif event.key == K_DOWN:
-                mg.move('down')
+                MG.move('down')
 
-    level.generate()
-    window.blit(background, (0, 0))
-    level.display(window)
-    window.blit(mg.axe, (mg.x, mg.y))
+    LEVEL.generate()
+    WINDOW.blit(BACKGROUND, (0, 0))
+    LEVEL.display(WINDOW)
+    WINDOW.blit(MG.axe, (MG.var_x, MG.var_y))
     # Refresh the display
     pygame.display.flip()
 
     if event.type == QUIT or event.type == KEYDOWN and event.key == K_ESCAPE:
         game = False
-    if level.setting[mg.square_y][mg.square_x] == 'G':
+    if LEVEL.setting[MG.square_y][MG.square_x] == 'G':
         print("You WIN!!!")
         game = False
