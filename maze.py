@@ -2,7 +2,7 @@ from constant import IMG_WALL, IMG_GUARDIAN
 from macgyver import *
 
 
-class _Maze:
+class Maze:
     """Class for create the Maze"""
 
     def __init__(self, file):

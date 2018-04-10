@@ -16,8 +16,6 @@ class Loot:
         self.level = LEVEL
         self.loaded = True
         self.loot_img = loot_img
-
-    def display(self, loot_img, window):
         while self.loaded:
             self.square_x = random.randint(0, 14)
             self.square_y = random.randint(0, 14)
@@ -25,3 +23,10 @@ class Loot:
                 self.var_x = self.square_x * SPRITE_SIZE
                 self.var_y = self.square_y * SPRITE_SIZE
                 self.loaded = False
+        self.level.setting[self.square_y][self.square_x] = '1'
+
+
+    def display(self, loot_img, window):
+
+        if self.level.setting[self.square_y][self.square_x] == '1':
+            window.blit(self.loot_img, (self.var_x, self.var_y))
