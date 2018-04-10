@@ -1,7 +1,9 @@
 from constant import IMG_WALL, IMG_GUARDIAN
+# -tc- éviter les from module import *
 from macgyver import *
 
 
+# -tc- Pourquoi un underscore devant Maze?
 class _Maze:
     """Class for create the Maze"""
 
@@ -28,6 +30,7 @@ class _Maze:
         wall = pygame.image.load(IMG_WALL).convert_alpha()
         guardian = pygame.image.load(IMG_GUARDIAN).convert_alpha()
 
+        # utiliser la fonction enumerate() pour gérer nbr_line et nbr_square
         nbr_line = 0
         for line in self.setting:
             nbr_square = 0
