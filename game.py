@@ -3,7 +3,7 @@ import pygame
 from pygame.locals import *
 from constant import IMG_ICO, TITLE_WINDOW, IMG_BACKGROUND, C_TUBE, C_NEEDLE, C_ETHER, MAZE, game
 from maze import _Maze
-# from loot import Loot
+from loot import Loot
 from macgyver import Macgyver
 
 
