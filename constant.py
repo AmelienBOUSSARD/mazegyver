@@ -7,9 +7,12 @@ MAZE = 'maze.txt'
 TITLE_WINDOW = "MAZEGYVER"
 IMG_ICO = "images/macgyver_down.png"
 # Sprite of maze
+IMG_BACKGROUND = "images/background.jpg"
 IMG_WALL = "images/brick.png"
 IMG_GUARDIAN = "images/guardian.png"
-IMG_BACKGROUND = "images/background.jpg"
+IMG_BAG = "images/bag.png"
+IMG_IN_BAG = "images/in_bag.png"
+
 
 # loot
 C_TUBE = "images/tube.png"

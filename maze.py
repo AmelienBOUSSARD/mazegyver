@@ -1,4 +1,4 @@
-from constant import IMG_WALL, IMG_GUARDIAN
+from constant import IMG_WALL, IMG_GUARDIAN, IMG_BAG
 from macgyver import *
 
 
@@ -23,7 +23,7 @@ class Maze:
 
             self.setting = level_setting
 
-    def display(self, window):
+    def display(self, WINDOW):
         """Function for display the game"""
         wall = pygame.image.load(IMG_WALL).convert_alpha()
         guardian = pygame.image.load(IMG_GUARDIAN).convert_alpha()
@@ -35,8 +35,8 @@ class Maze:
                 var_x = nbr_square * SPRITE_SIZE
                 var_y = nbr_line * SPRITE_SIZE
                 if sprite == '#':
-                    window.blit(wall, (var_x, var_y))
+                    WINDOW.blit(wall, (var_x, var_y))
                 elif sprite == 'G':
-                    window.blit(guardian, (var_x, var_y))
+                    WINDOW.blit(guardian, (var_x, var_y))
                 nbr_square += 1
             nbr_line += 1

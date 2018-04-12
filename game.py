@@ -2,7 +2,7 @@ import random
 
 import pygame
 from pygame.locals import *
-from constant import nbr_square, IMG_ICO, TITLE_WINDOW, IMG_BACKGROUND, C_TUBE, C_NEEDLE, C_ETHER, MAZE, YOU_WIN, YOU_LOOSE
+from constant import nbr_square, IMG_ICO, TITLE_WINDOW, IMG_BAG, IMG_IN_BAG, IMG_BACKGROUND, C_TUBE, C_NEEDLE, C_ETHER, MAZE, YOU_WIN, YOU_LOOSE
 from maze import Maze
 from loot import Loot
 from macgyver import Macgyver
@@ -15,8 +15,12 @@ ICO = pygame.image.load(IMG_ICO)
 LEVEL = Maze(MAZE)
 LEVEL.generate()
 BACKGROUND = pygame.image.load(IMG_BACKGROUND).convert()
+bag = pygame.image.load(IMG_BAG).convert_alpha()
+in_bag = pygame.image.load(IMG_IN_BAG).convert_alpha()
 WINDOW.blit(BACKGROUND, (0, 0))
 LEVEL.display(WINDOW)
+WINDOW.blit(bag, (0, 418))
+WINDOW.blit(in_bag, (37, 418))
 MG = Macgyver("images/macgyver_right.png", "images/macgyver_left.png",
               "images/macgyver_up.png", "images/macgyver_down.png", LEVEL)
 # Load loot

@@ -5,14 +5,11 @@ from game import *
 
 # Var
 game = True
-nbr_loot = 0
 Tube_Picked = False
 Ether_Picked = False
 Needle_Picked = False
-pocket_loot = 0
 font = pygame.font.Font(None, 30)
-display_loot_nbr = font.render(
-    str(int(nbr_loot)), True, pygame.Color('white'))
+
 while game:
 
     pygame.time.Clock().tick(30)
@@ -25,12 +22,20 @@ while game:
         if event.type == KEYDOWN:
             WINDOW.blit(BACKGROUND, (0, 0))
             LEVEL.display(WINDOW)
+            WINDOW.blit(bag, (0, 418))
+            WINDOW.blit(in_bag, (37, 418))
             if Tube_Picked == False:
                 TUBE.display(TUBE_IMG, WINDOW)
+            if Tube_Picked == True:
+                WINDOW.blit(TUBE_IMG, (40, 418))
             if Ether_Picked == False:
                 ETHER.display(ETHER_IMG, WINDOW)
+            if Ether_Picked == True:
+                WINDOW.blit(ETHER_IMG, (70, 418))
             if Needle_Picked == False:
                 NEEDLE.display(NEEDLE_IMG, WINDOW)
+            if Needle_Picked == True:
+                WINDOW.blit(NEEDLE_IMG, (100, 418))
             if event.key == K_RIGHT:
                 MG.move('right')
             elif event.key == K_LEFT:
@@ -41,6 +46,8 @@ while game:
                 MG.move('down')
 
     WINDOW.blit(MG.axe, (MG.var_x, MG.var_y))
+    # Refresh the display
+    pygame.display.flip()
 
     if (MG.var_x, MG.var_y) == (TUBE.var_x, TUBE.var_y):
         Tube_Picked = True
@@ -50,9 +57,6 @@ while game:
 
     if (MG.var_x, MG.var_y) == (NEEDLE.var_x, NEEDLE.var_y):
         Needle_Picked = True
-
-    # Refresh the display
-    pygame.display.flip()
 
     if event.type == QUIT or event.type == KEYDOWN and event.key == K_ESCAPE:
         game = False

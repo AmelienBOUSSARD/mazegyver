@@ -17,8 +17,8 @@ class Loot:
         self.loaded = True
         self.loot_img = loot_img
         while self.loaded:
-            self.square_x = random.randint(1, 14)
-            self.square_y = random.randint(1, 14)
+            self.square_x = random.randint(1, 2)
+            self.square_y = random.randint(1, 7)
             if self.level.setting[self.square_y][self.square_x] == '0':
                 self.var_x = self.square_x * SPRITE_SIZE
                 self.var_y = self.square_y * SPRITE_SIZE
