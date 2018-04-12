@@ -31,11 +31,11 @@ while game:
             if Ether_Picked == False:
                 ETHER.display(ETHER_IMG, WINDOW)
             if Ether_Picked == True:
-                WINDOW.blit(ETHER_IMG, (70, 418))
+                WINDOW.blit(ETHER_IMG, (75, 418))
             if Needle_Picked == False:
                 NEEDLE.display(NEEDLE_IMG, WINDOW)
             if Needle_Picked == True:
-                WINDOW.blit(NEEDLE_IMG, (100, 418))
+                WINDOW.blit(NEEDLE_IMG, (110, 418))
             if event.key == K_RIGHT:
                 MG.move('right')
             elif event.key == K_LEFT:

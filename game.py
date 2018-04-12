@@ -9,7 +9,6 @@ from macgyver import Macgyver
 
 pygame.init()
 
-# VAR
 WINDOW = pygame.display.set_mode((450, 450))
 ICO = pygame.image.load(IMG_ICO)
 LEVEL = Maze(MAZE)
@@ -21,6 +20,8 @@ WINDOW.blit(BACKGROUND, (0, 0))
 LEVEL.display(WINDOW)
 WINDOW.blit(bag, (0, 418))
 WINDOW.blit(in_bag, (37, 418))
+MAZE_SONG = pygame.mixer.Sound("maze_song.ogg")
+MAZE_SONG.play(loops=-1, maxtime=0, fade_ms=0)
 MG = Macgyver("images/macgyver_right.png", "images/macgyver_left.png",
               "images/macgyver_up.png", "images/macgyver_down.png", LEVEL)
 # Load loot
