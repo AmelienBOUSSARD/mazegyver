@@ -9,25 +9,42 @@ from constant import nbr_square, IMG_ICO, TITLE_WINDOW, IMG_BAG, IMG_IN_BAG, IMG
 from maze import Maze
 from loot import Loot
 from macgyver import Macgyver
+
+
 class Start:
     """Class for create start"""
+
     def __init__(self):
         """Constructor of the class"""
         pygame.init()
-
+        # inivible cursor
+        pygame.mouse.set_cursor(
+            (8, 8), (0, 0), (0, 0, 0, 0, 0, 0, 0, 0), (0, 0, 0, 0, 0, 0, 0, 0))
+        # set size of window
         WINDOW = pygame.display.set_mode((450, 450))
+        # set icon of window
         ICO = pygame.image.load(IMG_ICO)
+        # load the level
         LEVEL = Maze(MAZE)
+        # generate the level
         LEVEL.generate()
+        # load BACKGROUND
         BACKGROUND = pygame.image.load(IMG_BACKGROUND).convert()
-        bag = pygame.image.load(IMG_BAG).convert_alpha()
-        in_bag = pygame.image.load(IMG_IN_BAG).convert_alpha()
+        # load BAG and IN_BAG
+        BAG = pygame.image.load(IMG_BAG).convert_alpha()
+        IN_BAG = pygame.image.load(IMG_IN_BAG).convert_alpha()
+        # display BACKGROUND
         WINDOW.blit(BACKGROUND, (0, 0))
+        # display maze
         LEVEL.display(WINDOW)
-        WINDOW.blit(bag, (0, 418))
-        WINDOW.blit(in_bag, (37, 418))
+        # display BAG and IN_BAG
+        WINDOW.blit(BAG, (0, 418))
+        WINDOW.blit(IN_BAG, (37, 418))
+        # load MAZE_SONG
         MAZE_SONG = pygame.mixer.Sound("maze_song.ogg")
+        # play song
         MAZE_SONG.play(loops=-1, maxtime=0, fade_ms=0)
+        # load Macgyver sprites according to the axis
         MG = Macgyver("images/macgyver_right.png", "images/macgyver_left.png",
                       "images/macgyver_up.png", "images/macgyver_down.png", LEVEL)
         # Load loot
@@ -59,10 +76,13 @@ class Start:
 
             for event in pygame.event.get():
                 if event.type == KEYDOWN:
+                    # display BACKGROUND
                     WINDOW.blit(BACKGROUND, (0, 0))
+                    # display maze
                     LEVEL.display(WINDOW)
-                    WINDOW.blit(bag, (0, 418))
-                    WINDOW.blit(in_bag, (37, 418))
+                    # display BAG and IN_BAG
+                    WINDOW.blit(BAG, (0, 418))
+                    WINDOW.blit(IN_BAG, (37, 418))
                     if Tube_Picked == False:
                         TUBE.display(TUBE_IMG, WINDOW)
                     if Tube_Picked == True:
@@ -87,13 +107,13 @@ class Start:
             WINDOW.blit(MG.axe, (MG.var_x, MG.var_y))
             # Refresh the display
             pygame.display.flip()
-
+            # take the TUBE if Macgyver is on the TUBE
             if (MG.var_x, MG.var_y) == (TUBE.var_x, TUBE.var_y):
                 Tube_Picked = True
-
+            # take ETHER if Macgyver is on the ETHER
             if (MG.var_x, MG.var_y) == (ETHER.var_x, ETHER.var_y):
                 Ether_Picked = True
-
+            # take NEEDLE if Macgyver is on the NEEDLE
             if (MG.var_x, MG.var_y) == (NEEDLE.var_x, NEEDLE.var_y):
                 Needle_Picked = True
 
@@ -103,7 +123,7 @@ class Start:
             # EndGame Victory or lose
             # if macgyver arrives in front of the guard
             if LEVEL.setting[MG.square_y][MG.square_x] == 'S':
-                #loot check
+                # loot check
                 if Tube_Picked is True and Needle_Picked is True and Ether_Picked is True:
                     YOU_WIN = True
                 else:
@@ -121,4 +141,6 @@ class Start:
                     print("\033[1;30;47m \n              @@@@@ @@@@@\n           @               @\n         @        YOU        @\n         @       DEAD        @\n          @                 @\n         @ @               @ @\n          @@ @@@@@   @@@@@ @@\n     @     @ @@@@     @@@@ @    @@\n    @  @   @      @ @          @  @\n   @      @@@@    @ @    @@@@      @\n        @@   @@@       @@@   @@\n            @@   @@@@@@  @@\n           @@@  @@@@@@@@ @@@\n     @ @@    @@         @@    @  @\n      @   @      @@@@@      @   @\n       @@                     @@ \n")
                     time.sleep(2)
                     game = False
+
+
 Start()

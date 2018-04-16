@@ -30,7 +30,7 @@ class Macgyver:
                 if self.level.setting[self.square_y][self.square_x + 1] != '#':
                     self.square_x += 1
                     self.var_x = self.square_x * SPRITE_SIZE
-            #axe of macgyver
+            # axe of macgyver
             self.axe = self.right
 
         if axe == 'left':
@@ -38,7 +38,7 @@ class Macgyver:
                 if self.level.setting[self.square_y][self.square_x - 1] != '#':
                     self.square_x -= 1
                     self.var_x = self.square_x * SPRITE_SIZE
-            #axe of macgyver
+            # axe of macgyver
             self.axe = self.left
 
         if axe == 'up':
@@ -46,7 +46,7 @@ class Macgyver:
                 if self.level.setting[self.square_y - 1][self.square_x] != '#':
                     self.square_y -= 1
                     self.var_y = self.square_y * SPRITE_SIZE
-            #axe of macgyver
+            # axe of macgyver
             self.axe = self.up
 
         if axe == 'down':
@@ -54,5 +54,5 @@ class Macgyver:
                 if self.level.setting[self.square_y + 1][self.square_x] != '#':
                     self.square_y += 1
                     self.var_y = self.square_y * SPRITE_SIZE
-            #axe of macgyver
+            # axe of macgyver
             self.axe = self.down
