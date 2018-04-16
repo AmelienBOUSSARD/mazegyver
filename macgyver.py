@@ -8,7 +8,7 @@ class Macgyver:
 
     def __init__(self, right, left, up, down, LEVEL):
         """Constructor of the class"""
-        # Sprites of character
+        # Sprites of character according to its axis
         self.right = pygame.image.load(right).convert_alpha()
         self.left = pygame.image.load(left).convert_alpha()
         self.up = pygame.image.load(up).convert_alpha()
@@ -30,6 +30,7 @@ class Macgyver:
                 if self.level.setting[self.square_y][self.square_x + 1] != '#':
                     self.square_x += 1
                     self.var_x = self.square_x * SPRITE_SIZE
+            #axe of macgyver
             self.axe = self.right
 
         if axe == 'left':
@@ -37,6 +38,7 @@ class Macgyver:
                 if self.level.setting[self.square_y][self.square_x - 1] != '#':
                     self.square_x -= 1
                     self.var_x = self.square_x * SPRITE_SIZE
+            #axe of macgyver
             self.axe = self.left
 
         if axe == 'up':
@@ -44,6 +46,7 @@ class Macgyver:
                 if self.level.setting[self.square_y - 1][self.square_x] != '#':
                     self.square_y -= 1
                     self.var_y = self.square_y * SPRITE_SIZE
+            #axe of macgyver
             self.axe = self.up
 
         if axe == 'down':
@@ -51,4 +54,5 @@ class Macgyver:
                 if self.level.setting[self.square_y + 1][self.square_x] != '#':
                     self.square_y += 1
                     self.var_y = self.square_y * SPRITE_SIZE
+            #axe of macgyver
             self.axe = self.down

@@ -18,6 +18,3 @@ IMG_IN_BAG = "images/in_bag.png"
 C_TUBE = "images/tube.png"
 C_NEEDLE = "images/needle.png"
 C_ETHER = "images/ether.png"
-
-YOU_WIN = False
-YOU_LOOSE = False
