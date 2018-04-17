@@ -133,8 +133,13 @@ class Start:
                 if YOU_WIN is True:
                     # \033[1;33;40m is for color the shell but does not always work
                     print("\033[1;33;40m \n       ...............\n   ,,,,,.           .,,,,,\n   ,,  ,,    YOU    ,,  ,,\n    ,. ,,    WIN    ,, .,\n     ,, ,,   !!!   ,, ,,\n       ,,,,       ,,,,\n           ,,   ,,\n             ,,,\n              ,\n           ,,,,,,\n        ,,,,,,,,,,,,,")
-                    print("  Thank's to play my game")
-                    time.sleep(2)
+                    print("  Thank's to play my game \nTHREE")
+                    time.sleep(1)
+                    print("TWO")
+                    time.sleep(1)
+                    print("ONE")
+                    time.sleep(1)
+                    print("End of transmission...")
                     game = False
 
                 if YOU_LOSE is True:
