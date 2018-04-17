@@ -2,13 +2,13 @@
 <p align="center">
   <img src="images/screen.png">
  </p>
- <h2 align="center">
+ <h2 align="center" style="color: green">
   Aidez MacGyver à s'échapper !
  </h2>
 
 ## Fonctionnalités
 Il n'y a qu'un seul niveau. La structure (départ, emplacement des murs, arrivée), devra être enregistrée dans un fichier pour la modifier facilement au besoin.
-MacGyver sera contrôlé par les touches directionnelles du clavier.
+MacGyver sera contrôlé par les touches directionnelles du clavier. :arrow_left: :arrow_up: :arrow_right: :arrow_down:
 Les objets seront répartis aléatoirement dans le labyrinthe et changeront d’emplacement si l'utilisateur ferme le jeu et le relance.
 La fenêtre du jeu sera un carré pouvant afficher 15 sprites sur la longueur.
 MacGyver devra donc se déplacer de case en case, avec 15 cases sur la longueur de la fenêtre !
@@ -31,9 +31,9 @@ Le programme sera standalone, c'est-à-dire qu'il pourra être exécuté sur n'i
 
 # All Sprites
 
-MacGyver | Maze | Loot | Bag
---- | --- | --- | ---
-<img src="images/macgyver_down.png"> **Down**| <img src="images/brick.png"> **Wall**| <img src="images/tube.png"> **Tube** | <img src="images/bag.png">
+MacGyver | Maze | Loot | Bag | Background |
+--- | --- | --- | --- | --- |
+<img src="images/macgyver_down.png"> **Down**| <img src="images/brick.png"> **Wall**| <img src="images/tube.png"> **Tube** | <img src="images/bag.png"> | <img src="images/background.jpg" height="32" width="32"> |
 <img src="images/macgyver_up.png"> **Up**| <img src="images/guardian.png"> **Guardian**| <img src="images/ether.png">**Ether** | <img src="images/in_bag.png"> **In Bag**
 <img src="images/macgyver_left.png"> **Left**| | <img src="images/needle.png"> **Needle**|
 <img src="images/macgyver_right.png"> **Right**|
