@@ -5,7 +5,8 @@ import time
 
 import pygame
 from pygame.locals import *
-from constant import IMG_ICO, TITLE_WINDOW, IMG_BAG, IMG_IN_BAG, IMG_BACKGROUND, C_TUBE, C_NEEDLE, C_ETHER, MAZE
+from constant import IMG_ICO, TITLE_WINDOW, IMG_BAG, IMG_IN_BAG
+from constant import IMG_BACKGROUND, C_TUBE, C_NEEDLE, C_ETHER, MAZE
 from maze import Maze
 from loot import Loot
 from macgyver import Macgyver
@@ -45,8 +46,12 @@ class Start:
         # play song
         MAZE_SONG.play(loops=-1, maxtime=0, fade_ms=0)
         # load Macgyver sprites according to the axis
-        MG = Macgyver("images/macgyver_right.png", "images/macgyver_left.png",
-                      "images/macgyver_up.png", "images/macgyver_down.png", LEVEL)
+        MG = Macgyver(
+            "images/macgyver_right.png",
+            "images/macgyver_left.png",
+            "images/macgyver_up.png",
+            "images/macgyver_down.png",
+            LEVEL)
         # Load loot
         TUBE_IMG = pygame.image.load(C_TUBE).convert_alpha()
         NEEDLE_IMG = pygame.image.load(C_NEEDLE).convert_alpha()
@@ -84,17 +89,17 @@ class Start:
                     # display BAG and IN_BAG
                     WINDOW.blit(BAG, (0, 418))
                     WINDOW.blit(IN_BAG, (37, 418))
-                    if Tube_Picked == False:
+                    if Tube_Picked is False:
                         TUBE.display(TUBE_IMG, WINDOW)
-                    if Tube_Picked == True:
+                    if Tube_Picked is True:
                         WINDOW.blit(TUBE_IMG, (40, 418))
-                    if Ether_Picked == False:
+                    if Ether_Picked is False:
                         ETHER.display(ETHER_IMG, WINDOW)
-                    if Ether_Picked == True:
+                    if Ether_Picked is True:
                         WINDOW.blit(ETHER_IMG, (75, 418))
-                    if Needle_Picked == False:
+                    if Needle_Picked is False:
                         NEEDLE.display(NEEDLE_IMG, WINDOW)
-                    if Needle_Picked == True:
+                    if Needle_Picked is True:
                         WINDOW.blit(NEEDLE_IMG, (110, 418))
                     if event.key == K_RIGHT:
                         MG.move('right')
@@ -118,14 +123,16 @@ class Start:
             if (MG.var_x, MG.var_y) == (NEEDLE.var_x, NEEDLE.var_y):
                 Needle_Picked = True
 
-            if event.type == QUIT or event.type == KEYDOWN and event.key == K_ESCAPE:
+            if (event.type == QUIT or event.type == KEYDOWN and
+                    event.key == K_ESCAPE):
                 game = False
 
             # EndGame Victory or lose
             # if macgyver arrives in front of the guard
             if LEVEL.setting[MG.square_y][MG.square_x] == 'S':
                 # loot check
-                if Tube_Picked is True and Needle_Picked is True and Ether_Picked is True:
+                if (Tube_Picked is True and Needle_Picked is True and
+                        Ether_Picked is True):
                     YOU_WIN = True
                 else:
                     YOU_LOSE = True
