@@ -44,3 +44,15 @@ class Maze:
                     WINDOW.blit(guardian, (var_x, var_y))
                 nbr_square += 1
             nbr_line += 1
+
+    def is_wall(self, line, column):
+
+        return self.setting[line][column] == "#"
+
+    def is_path(self, line, column):
+
+        return self.setting[line][column] == "0"
+
+    def set_loot(self, line, column):
+
+        self.setting[line][column] = "1"

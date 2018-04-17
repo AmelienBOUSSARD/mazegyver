@@ -27,7 +27,7 @@ class Macgyver:
         """"move the character"""
         if axe == 'right':
             if self.square_x < (NBR_SPRITE_SQUARE - 1):
-                if self.level.setting[self.square_y][self.square_x + 1] != '#':
+                if not self.level.is_wall(self.square_y, self.square_x + 1):
                     self.square_x += 1
                     self.var_x = self.square_x * SPRITE_SIZE
             # axe of macgyver
@@ -35,7 +35,7 @@ class Macgyver:
 
         if axe == 'left':
             if self.square_x > 0:
-                if self.level.setting[self.square_y][self.square_x - 1] != '#':
+                if not self.level.is_wall(self.square_y, self.square_x - 1):
                     self.square_x -= 1
                     self.var_x = self.square_x * SPRITE_SIZE
             # axe of macgyver
@@ -43,7 +43,7 @@ class Macgyver:
 
         if axe == 'up':
             if self.square_y > 0:
-                if self.level.setting[self.square_y - 1][self.square_x] != '#':
+                if not self.level.is_wall(self.square_y - 1, self.square_x):
                     self.square_y -= 1
                     self.var_y = self.square_y * SPRITE_SIZE
             # axe of macgyver
@@ -51,7 +51,7 @@ class Macgyver:
 
         if axe == 'down':
             if self.square_y < (NBR_SPRITE_SQUARE - 1):
-                if self.level.setting[self.square_y + 1][self.square_x] != '#':
+                if not self.level.is_wall(self.square_y + 1, self.square_x):
                     self.square_y += 1
                     self.var_y = self.square_y * SPRITE_SIZE
             # axe of macgyver
