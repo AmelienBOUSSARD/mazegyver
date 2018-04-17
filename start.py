@@ -64,9 +64,10 @@ class Start:
         Tube_Picked = False
         Ether_Picked = False
         Needle_Picked = False
-        font = pygame.font.Font(None, 30)
         YOU_WIN = False
         YOU_LOSE = False
+
+        print("Incoming transmiton...")
 
         while game:
 
@@ -139,8 +140,15 @@ class Start:
                 if YOU_LOSE is True:
                     # \033[1;30;47m is for color the shell but does not always work
                     print("\033[1;30;47m \n              @@@@@ @@@@@\n           @               @\n         @        YOU        @\n         @       DEAD        @\n          @                 @\n         @ @               @ @\n          @@ @@@@@   @@@@@ @@\n     @     @ @@@@     @@@@ @    @@\n    @  @   @      @ @          @  @\n   @      @@@@    @ @    @@@@      @\n        @@   @@@       @@@   @@\n            @@   @@@@@@  @@\n           @@@  @@@@@@@@ @@@\n     @ @@    @@         @@    @  @\n      @   @      @@@@@      @   @\n       @@                     @@ \n")
-                    time.sleep(2)
+                    print("THREE")
+                    time.sleep(1)
+                    print("TWO")
+                    time.sleep(1)
+                    print("ONE")
+                    time.sleep(1)
+                    print("End of transmission...")
                     game = False
 
 
-Start()
+if __name__ == '__main__':
+    Start()

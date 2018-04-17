@@ -1,5 +1,4 @@
 import random
-import pygame
 from pygame.locals import *
 from constant import SPRITE_SIZE
 
@@ -11,8 +10,6 @@ class Loot:
         """Constructor of the class"""
         self.square_y = 0
         self.square_x = 0
-        self.var_x = 0
-        self.var_y = 0
         self.level = LEVEL
         self.loaded = True
         self.loot_img = loot_img
@@ -29,7 +26,7 @@ class Loot:
         # replace the 0 by a 1 where will be placed loot to avoid another loot this puts on
         self.level.setting[self.square_y][self.square_x] = '1'
 
-    def display(self, loot_img, window):
+    def display(self, loot_img, WINDOW):
         # location of the sprite of the loot image
         if self.level.setting[self.square_y][self.square_x] == '1':
-            window.blit(self.loot_img, (self.var_x, self.var_y))
+            WINDOW.blit(self.loot_img, (self.var_x, self.var_y))
