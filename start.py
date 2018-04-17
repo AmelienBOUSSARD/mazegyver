@@ -5,7 +5,7 @@ import time
 
 import pygame
 from pygame.locals import *
-from constant import nbr_square, IMG_ICO, TITLE_WINDOW, IMG_BAG, IMG_IN_BAG, IMG_BACKGROUND, C_TUBE, C_NEEDLE, C_ETHER, MAZE
+from constant import IMG_ICO, TITLE_WINDOW, IMG_BAG, IMG_IN_BAG, IMG_BACKGROUND, C_TUBE, C_NEEDLE, C_ETHER, MAZE
 from maze import Maze
 from loot import Loot
 from macgyver import Macgyver

@@ -1,7 +1,6 @@
 # Constant
 NBR_SPRITE_SQUARE = 15
 SPRITE_SIZE = 30
-nbr_square = NBR_SPRITE_SQUARE * SPRITE_SIZE
 MAZE = 'maze.txt'
 # Customize the window
 TITLE_WINDOW = "MAZEGYVER"
