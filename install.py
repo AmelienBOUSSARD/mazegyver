@@ -1,9 +1,2 @@
-import pip
-
-
-def install(package):
-    pip.main(['install', package])
-
-
-if __name__ == '__main__':
-    install('-rrequirements.txt')
+import os
+os.system("pip install -r requirements.txt")
