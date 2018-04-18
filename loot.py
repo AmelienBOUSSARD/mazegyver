@@ -23,7 +23,8 @@ class Loot:
                 self.var_x = self.square_x * SPRITE_SIZE
                 self.var_y = self.square_y * SPRITE_SIZE
                 self.loaded = False
-        # replace the 0 by a 1 where will be placed loot to avoid another loot this puts on
+        # replace the 0 by a 1 where will be placed loot to avoid another loot
+        # this puts on
         self.level.set_loot(self.square_y, self.square_x)
 
     def display(self, loot_img, WINDOW):
