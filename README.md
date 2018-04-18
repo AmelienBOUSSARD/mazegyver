@@ -3,31 +3,36 @@
   <img src="images/screen.png">
  </p>
  <h2 align="center" style="color: green">
-  Aidez MacGyver à s'échapper !
+    Help MacGyver to escape!
  </h2>
 
-## Fonctionnalités
-Il n'y a qu'un seul niveau. La structure (départ, emplacement des murs, arrivée), devra être enregistrée dans un fichier pour la modifier facilement au besoin.
-MacGyver sera contrôlé par les touches directionnelles du clavier. :arrow_left: :arrow_up: :arrow_right: :arrow_down:
-Les objets seront répartis aléatoirement dans le labyrinthe et changeront d’emplacement si l'utilisateur ferme le jeu et le relance.
-La fenêtre du jeu sera un carré pouvant afficher 15 sprites sur la longueur.
-MacGyver devra donc se déplacer de case en case, avec 15 cases sur la longueur de la fenêtre !
-Il récupèrera un objet simplement en se déplaçant dessus.
-Le programme s'arrête uniquement si MacGyver a bien récupéré tous les objets et trouvé la sortie du labyrinthe. S'il n'a pas tous les objets et qu'il se présente devant le garde, il meurt (la vie est cruelle pour les héros).
-Le programme sera standalone, c'est-à-dire qu'il pourra être exécuté sur n'importe quel ordinateur.
+## Features
+There is only a single level. The structure (departure, location of walls, arrival), must be registered in a file to modify her easily at the need. MacGyver will be controlled by the directional touches of the keyboard.:arrow_left: :arrow_up: :arrow_right: :arrow_down:  
 
-## Contraintes
-- Vous versionnerez votre code en utilisant Git et le publierez sur Github pour que votre mentor puisse le commenter,
-- Vous respecterez les bonnes pratiques de la PEP 8 et développerez dans un environnement virtuel utilisant Python 3,
-- Votre code devra être écrit en anglais : nom des variables, commentaires, fonctions...
+Objects will be randomly distributed in the labyrinth and will change location if the user closes the game and relaunching.   
 
-## Compétences à valider
-- Lire et comprendre une documentation de module
-- Coder efficacement en utilisant les outils adéquats
-- Utiliser un algorithme pour résoudre un besoin technique
-- Gérer les différentes versions de Python et ses modules en fonction des projets
-- Conceptualiser l'ensemble de son application en décrivant sa structure (Entités / Domain Objects)
-- Créer des scripts pour le web en utilisant Python
+The window of the game will be a square which can display 15 sprites on the length.
+
+MacGyver will thus have to move of square in square, with 15 square on the length of the window!
+
+Hewill get back an object simply by moving above.
+
+The program stops only if MacGyver got back well all the objects and found the exit of the labyrinth. If he has all the objects and  présent in front of the guard, he dies (the life is cruel for the heroes).
+
+The program will be standalone, that is he can be executed on any computer.
+
+## Constraints
+- Versioning your code by using Git and to publish him on Github so that your mentor can comment on it
+- To respect the best practice of the PEP 8 and will develop in a virtual environment using Python 3
+- The code must be written in English: name of variables, comments, functions...
+
+## Skills to validate
+- Read and understand a documentation of module
+- Code effectively by using the adequate tools
+- Use an algorithm to solve a technical need
+- Manage the various versions of Python and its modules according to the projects
+- Conceptualize its whole application by describing its structure (Entities / Domain Objects)
+- Create scripts for Web by using Python
 
 # All Sprites
 
@@ -37,3 +42,9 @@ MacGyver | Maze | Loot | Bag | Background |
 <img src="images/macgyver_up.png"> **Up**| <img src="images/guardian.png"> **Guardian**| <img src="images/ether.png">**Ether** | <img src="images/in_bag.png"> **In Bag**
 <img src="images/macgyver_left.png"> **Left**| | <img src="images/needle.png"> **Needle**|
 <img src="images/macgyver_right.png"> **Right**|
+
+# Install and play
+
+Install | Play
+--- | ---
+Launch **install.py** | Launch **start.py**
