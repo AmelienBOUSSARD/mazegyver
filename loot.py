@@ -28,5 +28,5 @@ class Loot:
 
     def display(self, loot_img, WINDOW):
         # location of the sprite of the loot image
-        if self.level.set_loot(self.square_y, self.square_x):
+        if self.level.is_loot(self.square_y, self.square_x):
             WINDOW.blit(self.loot_img, (self.var_x, self.var_y))

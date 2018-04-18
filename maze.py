@@ -60,3 +60,7 @@ class Maze:
     def set_loot(self, line, column):
 
         self.setting[line][column] = "1"
+
+    def is_loot(self, line, column):
+
+        return self.setting[line][column] == "1"

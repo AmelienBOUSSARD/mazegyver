@@ -95,7 +95,6 @@ class Start:
                     # display BAG and IN_BAG
                     WINDOW.blit(BAG, (0, 418))
                     WINDOW.blit(IN_BAG, (37, 418))
-                    TUBE.display(TUBE_IMG, WINDOW)
                     if Tube_Picked is False:
                         TUBE.display(TUBE_IMG, WINDOW)
                     if Tube_Picked is True:
