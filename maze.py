@@ -53,6 +53,10 @@ class Maze:
 
         return self.setting[line][column] == "0"
 
+    def is_end(self, line, column):
+
+        return self.setting[line][column] == "S"
+
     def set_loot(self, line, column):
 
         self.setting[line][column] = "1"

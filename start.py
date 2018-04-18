@@ -7,6 +7,7 @@ import pygame
 from pygame.locals import *
 from constant import IMG_ICO, TITLE_WINDOW, IMG_BAG, IMG_IN_BAG
 from constant import IMG_BACKGROUND, C_TUBE, C_NEEDLE, C_ETHER, MAZE
+from constant import IMG_WIN, IMG_LOSE, IMG_3, IMG_2, IMG_1, IMG_END
 from maze import Maze
 from loot import Loot
 from macgyver import Macgyver
@@ -71,8 +72,13 @@ class Start:
         Needle_Picked = False
         YOU_WIN = False
         YOU_LOSE = False
-
-        print("Incoming transmiton...")
+        # Load win and lose img
+        WIN = pygame.image.load(IMG_WIN).convert()
+        LOSE = pygame.image.load(IMG_LOSE).convert()
+        THREE = pygame.image.load(IMG_3).convert_alpha()
+        TWO = pygame.image.load(IMG_2).convert_alpha()
+        ONE = pygame.image.load(IMG_1).convert_alpha()
+        END = pygame.image.load(IMG_END).convert_alpha()
 
         while game:
 
@@ -89,6 +95,7 @@ class Start:
                     # display BAG and IN_BAG
                     WINDOW.blit(BAG, (0, 418))
                     WINDOW.blit(IN_BAG, (37, 418))
+                    TUBE.display(TUBE_IMG, WINDOW)
                     if Tube_Picked is False:
                         TUBE.display(TUBE_IMG, WINDOW)
                     if Tube_Picked is True:
@@ -129,7 +136,7 @@ class Start:
 
             # EndGame Victory or lose
             # if macgyver arrives in front of the guard
-            if LEVEL.setting[MG.square_y][MG.square_x] == 'S':
+            if LEVEL.is_end(MG.square_y, MG.square_x):
                 # loot check
                 if (Tube_Picked is True and Needle_Picked is True and
                         Ether_Picked is True):
@@ -138,27 +145,45 @@ class Start:
                     YOU_LOSE = True
 
                 if YOU_WIN is True:
-                    # \033[1;33;40m is for color the shell but does not always work
-                    print("\033[1;33;40m \n       ...............\n   ,,,,,.           .,,,,,\n   ,,  ,,    YOU    ,,  ,,\n    ,. ,,    WIN    ,, .,\n     ,, ,,   !!!   ,, ,,\n       ,,,,       ,,,,\n           ,,   ,,\n             ,,,\n              ,\n           ,,,,,,\n        ,,,,,,,,,,,,,")
-                    print("  Thank's to play my game \nTHREE")
+                    WINDOW.blit(WIN, (0, 0))
+                    WINDOW.blit(THREE, (200, 280))
+                    pygame.display.flip()
                     time.sleep(1)
-                    print("TWO")
+                    WINDOW.blit(WIN, (0, 0))
+                    pygame.display.flip()
+                    WINDOW.blit(TWO, (200, 280))
+                    pygame.display.flip()
                     time.sleep(1)
-                    print("ONE")
+                    WINDOW.blit(WIN, (0, 0))
+                    pygame.display.flip()
+                    WINDOW.blit(ONE, (200, 280))
+                    pygame.display.flip()
                     time.sleep(1)
-                    print("End of transmission...")
+                    WINDOW.blit(WIN, (0, 0))
+                    pygame.display.flip()
+                    WINDOW.blit(END, (10, 300))
+                    pygame.display.flip()
                     game = False
 
                 if YOU_LOSE is True:
-                    # \033[1;30;47m is for color the shell but does not always work
-                    print("\033[1;30;47m \n              @@@@@ @@@@@\n           @               @\n         @        YOU        @\n         @       DEAD        @\n          @                 @\n         @ @               @ @\n          @@ @@@@@   @@@@@ @@\n     @     @ @@@@     @@@@ @    @@\n    @  @   @      @ @          @  @\n   @      @@@@    @ @    @@@@      @\n        @@   @@@       @@@   @@\n            @@   @@@@@@  @@\n           @@@  @@@@@@@@ @@@\n     @ @@    @@         @@    @  @\n      @   @      @@@@@      @   @\n       @@                     @@ \n")
-                    print("THREE")
+                    WINDOW.blit(LOSE, (0, 0))
+                    WINDOW.blit(THREE, (200, 280))
+                    pygame.display.flip()
                     time.sleep(1)
-                    print("TWO")
+                    WINDOW.blit(LOSE, (0, 0))
+                    pygame.display.flip()
+                    WINDOW.blit(TWO, (200, 280))
+                    pygame.display.flip()
                     time.sleep(1)
-                    print("ONE")
+                    WINDOW.blit(LOSE, (0, 0))
+                    pygame.display.flip()
+                    WINDOW.blit(ONE, (200, 280))
+                    pygame.display.flip()
                     time.sleep(1)
-                    print("End of transmission...")
+                    WINDOW.blit(LOSE, (0, 0))
+                    pygame.display.flip()
+                    WINDOW.blit(END, (10, 300))
+                    pygame.display.flip()
                     game = False
 
 
